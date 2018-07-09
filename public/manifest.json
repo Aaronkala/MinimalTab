@@ -1,0 +1,12 @@
+{
+  "author": "Aaron Hakala",
+  "name": "My new tab page",
+  "short_name": "React App",
+  "chrome_url_overrides": {
+    "newtab": "./index.html"
+  },
+  "description": "Simple extension for new tab",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "permissions": ["storage"]
+}
