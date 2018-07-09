@@ -1,12 +1,12 @@
 {
   "author": "Aaron Hakala",
-  "name": "My new tab page",
-  "short_name": "React App",
+  "name": "MinimalTab -- New Tab for notes",
+  "short_name": "MinimalTab",
   "chrome_url_overrides": {
     "newtab": "./index.html"
   },
-  "description": "Simple extension for new tab",
-  "manifest_version": 2,
+  "description": "Minimal new tab extension for notes.",
+  "manifest_version": 3,
   "version": "1.0.0",
   "permissions": ["storage"]
 }

@@ -24,26 +24,28 @@ class App extends Component {
       console.log('loaded')
       if (!chrome.runtime.error) {
         console.log('items', items)
-        this.setState({
-          initialText: items.text,
-        })
-      } else {
-        this.setState({
-          initialText: {
-            blocks: [
-              {
-                data: {},
-                depth: 0,
-                entityRanges: [],
-                inlineStyleRanges: [],
-                key: 'lcva',
-                text: 'this is editable text!',
-                type: 'unstyled',
-              },
-            ],
-            entityMap: {},
-          },
-        })
+        if (items.text) {
+          this.setState({
+            initialText: items.text,
+          })
+        } else {
+          this.setState({
+            initialText: {
+              blocks: [
+                {
+                  data: {},
+                  depth: 0,
+                  entityRanges: [],
+                  inlineStyleRanges: [],
+                  key: 'lcva',
+                  text: 'this is editable text!',
+                  type: 'unstyled',
+                },
+              ],
+              entityMap: {},
+            },
+          })
+        }
       }
     })
   }
