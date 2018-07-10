@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled, { injectGlobal } from 'styled-components'
 
 import logo from './logo.svg'
+import dantecss from 'Dante2/dist/DanteStyles.css'
 import './App.css'
 import Edit from './editor'
 

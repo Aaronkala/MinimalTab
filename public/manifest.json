@@ -6,7 +6,7 @@
     "newtab": "./index.html"
   },
   "description": "Minimal new tab extension for notes.",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "version": "1.0.0",
-  "permissions": ["storage"]
+  "permissions": ["storage", "https://*/"]
 }

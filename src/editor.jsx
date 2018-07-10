@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom'
 import Immutable from 'immutable'
 
 import { Dante, DanteEditor } from 'Dante2/es/index.js' //'Dante2';
-import dantecss from 'Dante2/dist/DanteStyles.css'
 
 import { Map, fromJS } from 'immutable'
 import DanteImagePopover from 'Dante2/es/components/popovers/image.js'
@@ -42,51 +41,51 @@ export default class Edit extends React.Component {
     defaultOptions.body_placeholder = 'Write your story'
 
     defaultOptions.widgets = [
-      {
-        title: 'add an image',
-        icon: 'image',
-        type: 'image',
-        block: ImageBlock,
-        editable: true,
-        renderable: true,
-        breakOnContinuous: true,
-        wrapper_class: 'graf graf--figure',
-        selected_class: 'is-selected is-mediaFocused',
-        selectedFn: block => {
-          const { direction } = block.getData().toJS()
-          switch (direction) {
-            case 'left':
-              return 'graf--layoutOutsetLeft'
-            case 'center':
-              return ''
-            case 'wide':
-              return 'sectionLayout--fullWidth'
-            case 'fill':
-              return 'graf--layoutFillWidth'
-          }
-        },
-        handleEnterWithoutText(ctx, block) {
-          const { editorState } = ctx.state
-          return ctx.onChange(addNewBlockAt(editorState, block.getKey()))
-        },
-        handleEnterWithText(ctx, block) {
-          const { editorState } = ctx.state
-          return ctx.onChange(addNewBlockAt(editorState, block.getKey()))
-        },
-        widget_options: {
-          displayOnInlineTooltip: true,
-          insertion: 'upload',
-          insert_block: 'image',
-        },
-        options: {
-          upload_url: options.upload_url,
-          upload_headers: options.upload_headers,
-          upload_formName: options.upload_formName,
-          upload_callback: options.image_upload_callback,
-          image_delete_callback: options.image_delete_callback,
-          image_caption_placeholder: options.image_caption_placeholder,
-        },
-      },
+      // {
+      //   title: 'add an image',
+      //   icon: 'image',
+      //   type: 'image',
+      //   block: ImageBlock,
+      //   editable: true,
+      //   renderable: true,
+      //   breakOnContinuous: true,
+      //   wrapper_class: 'graf graf--figure',
+      //   selected_class: 'is-selected is-mediaFocused',
+      //   selectedFn: block => {
+      //     const { direction } = block.getData().toJS()
+      //     switch (direction) {
+      //       case 'left':
+      //         return 'graf--layoutOutsetLeft'
+      //       case 'center':
+      //         return ''
+      //       case 'wide':
+      //         return 'sectionLayout--fullWidth'
+      //       case 'fill':
+      //         return 'graf--layoutFillWidth'
+      //     }
+      //   },
+      //   handleEnterWithoutText(ctx, block) {
+      //     const { editorState } = ctx.state
+      //     return ctx.onChange(addNewBlockAt(editorState, block.getKey()))
+      //   },
+      //   handleEnterWithText(ctx, block) {
+      //     const { editorState } = ctx.state
+      //     return ctx.onChange(addNewBlockAt(editorState, block.getKey()))
+      //   },
+      //   widget_options: {
+      //     displayOnInlineTooltip: true,
+      //     insertion: 'upload',
+      //     insert_block: 'image',
+      //   },
+      //   options: {
+      //     upload_url: options.upload_url,
+      //     upload_headers: options.upload_headers,
+      //     upload_formName: options.upload_formName,
+      //     upload_callback: options.image_upload_callback,
+      //     image_delete_callback: options.image_delete_callback,
+      //     image_caption_placeholder: options.image_caption_placeholder,
+      //   },
+      // },
       {
         icon: 'embed',
         title: 'insert embed',
@@ -282,22 +281,6 @@ export default class Edit extends React.Component {
     }
 
     return defaultOptions
-  }
-
-  onChange = (e, content) => {
-    console.log('saved', e, content)
-  }
-
-  componentDidMount() {
-    //  // simple implementation, use the js class
-    //
-    //  var article = new Dante({
-    //    el: "app",
-    //    content: demo,
-    //    read_only: true,
-    //    debug: true
-    //  })
-    //  article.render()
   }
 
   render() {

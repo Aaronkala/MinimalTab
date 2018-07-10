@@ -4,8 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-.medium-editor-element {
-  &:focus {
-    outline: none;
-  }
+.graf--blockquote,
+blockquote {
+  padding-left: 50px;
 }
